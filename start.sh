@@ -6,7 +6,7 @@
 # 
 # Example usage:
 #   ./start.sh -test -fast
-#   ./start.sh --logs /alternative/path/to/logs
+#   ./start.sh --logs /path/to/logs
 
 # default values
 test=0
