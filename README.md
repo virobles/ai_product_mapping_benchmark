@@ -165,7 +165,6 @@ ls -la /dev/kfd /dev/dri
 **Network connection issues:**
 The benchmark container connects to the server container via docker network using hostname `vllm-server`. Check connectivity:
 ```bash
-```bash
 docker compose run --rm vllm-benchmark curl http://vllm-server:8000/v1/models
 ```
 
