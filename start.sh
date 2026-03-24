@@ -109,6 +109,22 @@ $DOCKER_COMPOSE logs --tail=100 vllm-benchmark >> $env_log 2>&1
 echo "[BENCH] Shutting down services..."
 $DOCKER_COMPOSE down
 
+# Move benchmark results to log directory if it's different from current directory
+if [[ "$(realpath $log_loc)" != "$(realpath $PWD)" ]]; then
+    echo "[BENCH] Moving benchmark results to $log_loc..."
+    mkdir -p "$log_loc"
+    
+    # Move all benchsvr JSON and log files
+    if ls benchsvr_*.json 1> /dev/null 2>&1; then
+        mv benchsvr_*.json "$log_loc/" 2>/dev/null || true
+    fi
+    if ls benchsvr_*.log 1> /dev/null 2>&1; then
+        mv benchsvr_*.log "$log_loc/" 2>/dev/null || true
+    fi
+    
+    echo "[BENCH] Benchmark files moved to $log_loc"
+fi
+
 if [[ $exit_code -eq 0 ]]; then
     echo "[BENCH] Benchmark complete! Logs saved to $log_loc"
     echo "[BENCH] Environment log: $env_log"

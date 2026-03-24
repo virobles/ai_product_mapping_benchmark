@@ -45,22 +45,21 @@ mdl=$(echo "$model" | tr '/' '_')
 # Run benchmarks
 for max_concurrency in 1 4 8 16 32 64 128; do
     # use a number that will exercise max concurrency
-    num_prompts=$(($max_concurrency * 2 * $tp))
-    # limit num_prompts range so runs aren't too short or too long
+    # num_prompts should be 2x max_concurrency for steady-state measurements
     if [[ $max_concurrency -eq 1 ]]; then
         num_prompts=2
     elif [[ $max_concurrency -eq 4 ]]; then
-        num_prompts=4
-    elif [[ $max_concurrency -eq 8 ]]; then
         num_prompts=8
-    elif [[ $max_concurrency -eq 16 ]]; then
+    elif [[ $max_concurrency -eq 8 ]]; then
         num_prompts=16
-    elif [[ $max_concurrency -eq 32 ]]; then
+    elif [[ $max_concurrency -eq 16 ]]; then
         num_prompts=32
-    elif [[ $max_concurrency -eq 64 ]]; then
+    elif [[ $max_concurrency -eq 32 ]]; then
         num_prompts=64
-    elif [[ $max_concurrency -eq 128 ]]; then
+    elif [[ $max_concurrency -eq 64 ]]; then
         num_prompts=128
+    elif [[ $max_concurrency -eq 128 ]]; then
+        num_prompts=256
     fi
     
     # cycle through different IL/OL combos
