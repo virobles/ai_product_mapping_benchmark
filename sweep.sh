@@ -104,7 +104,7 @@ docker run -it --rm \
     "${VLLM_IMAGE}" \
     vllm bench sweep serve \
         --serve-cmd "vllm serve" \
-        --server-ready-timeout 600 \
+        --server-ready-timeout 7200 \
         --bench-cmd "vllm bench serve" \
         --serve-params "${SERVE_PARAMS}" \
         --bench-params "${BENCH_PARAMS}" \
