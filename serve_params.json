@@ -1,0 +1,51 @@
+[
+    {
+        "model": "Qwen/Qwen3-1.7B-FP8",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },
+    {
+        "model": "Qwen/Qwen3-4B-FP8",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },
+    {
+        "model": "amd/Llama-3.1-8B-Instruct-FP8-KV",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },
+    {
+        "model": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },           
+    {
+        "model": "unsloth/Mistral-Small-3.2-24B-Instruct-2506-FP8",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },
+    {
+        "model": "amd/Llama-3.3-70B-Instruct-FP8-KV",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    },
+    {
+        "model": "amd/gpt-oss-120b-w-mxfp4-a-fp8",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    }        
+]
