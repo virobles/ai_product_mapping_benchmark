@@ -1,0 +1,9 @@
+[
+    {
+        "model": "Qwen/Qwen3-1.7B-FP8",
+        "max_num_seqs": 256,
+        "max_num_batched_tokens": 8192,
+        "tensor_parallel": 1,
+        "max_model_len": 8192
+    }
+]
